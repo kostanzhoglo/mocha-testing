@@ -1,3 +1,6 @@
-module.exports = () => {
-  return 'hello';
+module.exports = {
+  sayHello: () => {
+    return 1;
+    // return 'hello';
+  }
 }
