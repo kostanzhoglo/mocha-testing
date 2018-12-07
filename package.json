@@ -4,7 +4,7 @@
   "description": "Testing mocha functionality, connecting it to app, etc.",
   "main": "index.js",
   "scripts": {
-    "test": "mocha || true"
+    "test": "mocha || exit 0"
   },
   "author": "jeff withers",
   "license": "ISC",

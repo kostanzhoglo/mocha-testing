@@ -10,30 +10,37 @@ const addNumbers = require('../index').addNumbers;
       //   assert.typeOf(result, 'string')
       // })
 
+const sayHelloResult = sayHello();
+const addNumbersResult = addNumbers(4, 9);
+
 describe('App', () => {
-  it('sayHello() should return "hello"', () => {
-    let result = sayHello();
-    assert.equal(result, "hello")
-    // assert.equal(app(), "hello")
+  describe('sayHello()', () => {
+    it('should return "hello"', () => {
+      // let result = sayHello();
+      assert.equal(sayHelloResult, "hello")
+      // assert.equal(app(), "hello")
+    })
+
+    it('should return type string', () => {
+      let result = sayHello();
+      assert.typeOf(sayHelloResult, 'string')
+    })
   })
 
-  it('sayHello() should return type string', () => {
-    let result = sayHello();
-    assert.typeOf(result, 'string')
-  })
+  describe('addNumbers()', () => {
+    it('addNumbers() should return correct sum', () => {
+      // let result = addNumbers(4, 9);
+      assert.equal(addNumbersResult, 13)
+    })
 
-  it('addNumbers() should return correct sum', () => {
-    let result = addNumbers(4, 9);
-    assert.equal(result, 13)
-  })
+    it('addNumbers() should be above 5', () => {
+      // let result = addNumbers(5,50);
+      assert.isAbove(addNumbersResult, 5);
+    })
 
-  it('addNumbers() should be above 5', () => {
-    let result = addNumbers(5,50);
-    assert.isAbove(result, 5);
-  })
-
-  it('addNumbers() should return type number', () => {
-    let result = addNumbers();
-    assert.typeOf(result, 'number')
+    it('addNumbers() should return type number', () => {
+      // let result = addNumbers();
+      assert.typeOf(addNumbersResult, 'number')
+    })
   })
 })
