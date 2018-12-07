@@ -1,7 +1,14 @@
 const assert = require('chai').assert;
+// Bring in Specific functions from other file.  Can call them by function name later...
 const sayHello = require('../index').sayHello;
 const addNumbers = require('../index').addNumbers;
-// const app = require('../index');
+// OR, bring in ENTIRE file (as below)
+// const index = require('../index');
+    // if choosing that option, you need to write the tests like this later...
+    //   it('sayHello() should return type string', () => {
+      //   let result = index.sayHello();
+      //   assert.typeOf(result, 'string')
+      // })
 
 describe('App', () => {
   it('sayHello() should return "hello"', () => {
@@ -23,5 +30,10 @@ describe('App', () => {
   it('addNumbers() should be above 5', () => {
     let result = addNumbers(5,50);
     assert.isAbove(result, 5);
+  })
+
+  it('addNumbers() should return type number', () => {
+    let result = addNumbers();
+    assert.typeOf(result, 'number')
   })
 })
